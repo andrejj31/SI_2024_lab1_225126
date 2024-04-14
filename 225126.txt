@@ -1,0 +1,93 @@
+4.
+mkdir SI_2024_lab1_225126
+cd SI_2024_lab1_225126/
+git init - Иницијализираме локален git repository
+5.
+git remote add origin https://github.com/andrejj31/SI_2024_lab1_225126.git - Поврзување на локалниот git repository со оддалечениот репозиториум
+6.
+nano README.md - Креирање file README.md и негово пополнување со содржина
+git add README.md - README.md од Untracked станува Staged
+git commit -m "Initial commit" - Првиот commit so порака Initial commit
+7.
+git add SILab1Main.java SILab1_1.java SILab1_2.java - Сите фајлови од Untracked стануваат Staged
+git commit -m "Add starter code" - Втор commit so порака Add starter code
+8.
+git push -u origin master - Синхронизација на локалниот директориум со оддалечениот
+9.
+git branch bug1 - Креирање гранка bug1 која се разгранува од master
+git branch bug2 - Креирање гранка bug2 која се разгранува од master
+10.
+git checkout bug1 - Префрлање на гранката bug1 од master
+11.
+git add SILab1_1.java - SILab1_1.java од modified влегува во staged
+git commit -m "Fix wrong condition in filterOddLengthStrings" - commit во гранката bug1 со порака Fix wrong condition in filterOddLengthStrings
+12.
+git checkout bug2 - Префрлање на гранката bug2 од bug1
+13.
+git add SILab1_2.java - SILab1_2.java од modified влегува во staged
+git commit -m "Fix wrong condition in makeBigStringFrom" - commit во гранката bug2 со порака Fix wrong condition in makeBigStringFrom
+14. 
+git checkout bug1 - Префрлање на гранката bug1 од bug2
+15.
+git add SILab1Main.java - SILab1Main.java од modified влегува во staged
+git commit -m "Call method filterOddLengthStrings" - commit на гранката bug1 со порака Call method filterOddLengthStrings
+16.
+git checkout bug2 - Префрлање на гранката bug2 од bug1
+17.
+git add SILab1Main.java - SILab1Main.java од modified влегува во staged
+git commit -m "Call method makeBigStringFrom in main class" - commit на гранката bug2 со порака Call method makeBigStringFrom in main class
+18.
+git push origin bug2 - Синхронизација на гранката bug 2 од локалниот репозиториум со оддалечениот
+git push origin bug1 - Синхронизација на гранката bug 1 од локалниот репозиториум со оддалечениот
+git push origin master - Синхронизација на гранката master од локалниот репозиториум со оддалечениот
+19. 
+git checkout master - Префрлање на гранката master од bug2
+20.
+git merge bug1
+- Нема конфликти 
+- Fast-forward стратегија ( 
+master: 
+9ceb331 (HEAD -> master, origin/master) Add starter code
+843da37 Initial commit
+bug1:
+bad6a3e (HEAD -> bug1, origin/bug1) Call method filterOddLengthStrings in main class
+2c1423b Fix wrong condition in filterOddLengthStrings
+9ceb331 (origin/master, master) Add starter code
+843da37 Initial commit )
+По спојувањето:
+bad6a3e (HEAD -> master, origin/bug1, bug1) Call method filterOddLengthStrings in main class
+2c1423b Fix wrong condition in filterOddLengthStrings
+9ceb331 (origin/master) Add starter code
+843da37 Initial commit
+21.
+git push origin master - Синхронизација на master бидејќи само во master има промени
+22.
+git checkout bug2 - Префрлање на гранката bug2 од master
+23.
+git rebase master
+- Се јавува конфликт
+- Конфликтот го решава со Keep both - односно остануваат двата повици, но во различна линија
+
+git rebase --continue
+24. 
+git checkout master - Префрлање на гранката master од bug2 
+25.
+git merge bug2
+- Нема конфликти
+- Fast-forward стратегија
+26. 
+git push origin master - Синхронизација на локалната гранка master со оддалечената
+27.
+git push origin bug2 --force - Синхронизација на локалната гранка bug2 со оддалечената
+28.
+git log > logs.txt - Копирање на содржината од git log во logs.txt
+29. 
+
+
+
+
+
+
+
+
+
